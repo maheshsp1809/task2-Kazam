@@ -1,12 +1,12 @@
 import React from "react";
-import TodoList from "./components/TodoList";
+import NoteApp from "./components/NoteApp";
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="container mx-auto px-4">
-      <TodoList />
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      <NoteApp />
     </div>
   );
-};
+}
 
 export default App;

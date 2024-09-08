@@ -5,3 +5,23 @@
 body {
   @apply bg-gray-100;
 }
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #92400e transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #92400e;
+  border-radius: 50%;
+  border: transparent;
+}
