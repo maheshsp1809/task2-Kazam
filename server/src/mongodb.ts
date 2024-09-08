@@ -24,8 +24,8 @@ export const connectMongoDB = async () => {
 };
 
 export const getCollection = () => {
-  const database = client.db('todo_app');
-  return database.collection(`tasks_${process.env.YOUR_FIRST_NAME}`);
+  const database = client.db('assignment');
+  return database.collection('assignment_Afroz');
 };
 
 export default client;

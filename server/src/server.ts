@@ -26,7 +26,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const REDIS_KEY = `FULLSTACK_TASK_${process.env.YOUR_FIRST_NAME}`;
+const REDIS_KEY = "FULLSTACK_TASK_AFROZ";
 
 const getTodoList = async (): Promise<TodoList> => {
   const data = await redisClient.get(REDIS_KEY);
@@ -56,9 +56,9 @@ io.on('connection', (socket) => {
       const newItem: TodoItem = { id: uuidv4(), text, completed: false };
       todoList.items.push(newItem);
 
-      if (todoList.items.length > 5) {
-        await moveToMongoDB(todoList.items.slice(0, 5));
-        todoList.items = todoList.items.slice(5);
+      if (todoList.items.length > 50) {
+        await moveToMongoDB(todoList.items.slice(0, 50));
+        todoList.items = todoList.items.slice(50);
       }
 
       await saveTodoList(todoList);
@@ -86,7 +86,7 @@ app.get('/fetchAllTasks', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
