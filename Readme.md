@@ -31,7 +31,7 @@ MONGODB_URI=
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/AFROZ002/task2-Kazam.git
+   git clone https://github.com/maheshsp1809/task2-Kazam.git
    ```
 
 2. Install dependencies:
