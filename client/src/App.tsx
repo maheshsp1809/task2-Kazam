@@ -1,4 +1,3 @@
-import React from "react";
 import NoteApp from "./components/NoteApp";
 
 function App() {

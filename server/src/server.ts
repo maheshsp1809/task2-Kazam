@@ -26,12 +26,15 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const REDIS_KEY = "FULLSTACK_TASK_AFROZ";
+const REDIS_KEY = "FULLSTACK_TASK_MAHESH";
 
 const getTodoList = async (): Promise<TodoList> => {
   const data = await redisClient.get(REDIS_KEY);
-  return data ? JSON.parse(data) : { items: [] };
+  console.log(`REDIS_KEY: ${REDIS_KEY}, data: ${data}`);
+  const parsedData = data ? JSON.parse(data) : { items: [] };
+  return parsedData;
 };
+
 
 const saveTodoList = async (todoList: TodoList) => {
   await redisClient.set(REDIS_KEY, JSON.stringify(todoList));
@@ -46,19 +49,21 @@ const moveToMongoDB = async (items: TodoItem[]) => {
     console.error("Error moving items to MongoDB Atlas:", error);
   }
 };
-
+let userCount = 0;
 io.on('connection', (socket) => {
-  console.log('A user connected');
+  userCount++;
+  console.log('A user connected', userCount);
+  io.emit('userCount', userCount);
 
   socket.on('add', async (text: string) => {
     try {
       const todoList = await getTodoList();
       const newItem: TodoItem = { id: uuidv4(), text, completed: false };
       todoList.items.push(newItem);
-
-      if (todoList.items.length > 50) {
-        await moveToMongoDB(todoList.items.slice(0, 50));
-        todoList.items = todoList.items.slice(50);
+      
+      if (todoList.items.length > 15) {
+        await moveToMongoDB(todoList.items.slice(0, 15));
+        todoList.items = todoList.items.slice(15);
       }
 
       await saveTodoList(todoList);
@@ -69,7 +74,9 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    console.log('A user disconnected');
+    userCount--;
+    console.log('A user disconnected', userCount);
+    io.emit('userCount', userCount);
   });
 });
 

@@ -25,7 +25,7 @@ export const connectMongoDB = async () => {
 
 export const getCollection = () => {
   const database = client.db('assignment');
-  return database.collection('assignment_Afroz');
+  return database.collection('assignment_mahesh');
 };
 
 export default client;

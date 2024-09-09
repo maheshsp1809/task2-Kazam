@@ -9,11 +9,12 @@ body {
 /* Custom Scrollbar Styles */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #92400e transparent;
+  scrollbar-color: #b46a3c transparent;
+  /* #92400e */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 2px;
+  width: 5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -22,6 +23,6 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #92400e;
-  border-radius: 50%;
+  border-radius: 10px;
   border: transparent;
 }
