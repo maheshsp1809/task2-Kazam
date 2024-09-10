@@ -77,24 +77,24 @@ MONGODB_URI=
 
 ### Image 1
 
-![Image 1](/frontend1.png)
+![Image 1](public/frontend1.png)
 
 ### Image 2
 
-![Image 2](/frontend2.png)
+![Image 2](public/frontend2.png)
 
 ### Image 3
 
-![Image 3](/frontend3.png)
+![Image 3](public/frontend3.png)
 
 ### Image 4
 
-![Image 4](/redis_cache.png)
+![Image 4](public/redis_cache.png)
 
 ### Image 5
 
-![Image 5](/redis_mongodb_users.png)
+![Image 5](public/redis_mongodb_users.png)
 
 ### Image 6
 
-![Image 6](/websocket.png)
+![Image 6](public/websocket.png)
