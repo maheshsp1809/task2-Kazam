@@ -76,7 +76,7 @@ const NoteApp: React.FC = () => {
           <div className=" bg-white border-b border-gray-200">
             <h2 className="text-lg font-bold text-gray-800 mb-1">Notes</h2>
           </div>
-          <div className="max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+          <div className="max-h-48 overflow-y-auto pr-2 scrollbar">
             <ul className="divide-y divide-gray-300">
               {notes.map((note) => (
                 <li key={note.id} className="py-2">

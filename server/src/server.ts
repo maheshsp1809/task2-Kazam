@@ -60,10 +60,10 @@ io.on('connection', (socket) => {
       const todoList = await getTodoList();
       const newItem: TodoItem = { id: uuidv4(), text, completed: false };
       todoList.items.push(newItem);
-      
-      if (todoList.items.length > 15) {
-        await moveToMongoDB(todoList.items.slice(0, 15));
-        todoList.items = todoList.items.slice(15);
+
+      if (todoList.items.length > 20) {
+        await moveToMongoDB(todoList.items.slice(0, 20));
+        todoList.items = todoList.items.slice(20);
       }
 
       await saveTodoList(todoList);
