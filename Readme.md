@@ -1,4 +1,6 @@
-# Full Stack To-Do List Application ![Click to watch the video](https://drive.google.com/file/d/1cAjXSm8R5R9EU2M8N5SP7ECRxhcLf7je/view?usp=sharing)
+# Full Stack To-Do List Application
+
+![Click to watch the video](https://drive.google.com/file/d/1cAjXSm8R5R9EU2M8N5SP7ECRxhcLf7je/view?usp=sharing)
 
 This is a full-stack application implementing a to-do list using Node.js/Express.js, WebSockets, Redis, and MongoDB.
 
