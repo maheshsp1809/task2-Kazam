@@ -30,7 +30,7 @@ const REDIS_KEY = "FULLSTACK_TASK_MAHESH";
 
 const getTodoList = async (): Promise<TodoList> => {
   const data = await redisClient.get(REDIS_KEY);
-  console.log(`REDIS_KEY: ${REDIS_KEY}, data: ${data}`);
+  // console.log(`REDIS_KEY: ${REDIS_KEY}, data: ${data}`);
   const parsedData = data ? JSON.parse(data) : { items: [] };
   return parsedData;
 };
@@ -61,9 +61,9 @@ io.on('connection', (socket) => {
       const newItem: TodoItem = { id: uuidv4(), text, completed: false };
       todoList.items.push(newItem);
 
-      if (todoList.items.length > 20) {
-        await moveToMongoDB(todoList.items.slice(0, 20));
-        todoList.items = todoList.items.slice(20);
+      if (todoList.items.length > 50) {
+        await moveToMongoDB(todoList.items.slice(0, 50));
+        todoList.items = todoList.items.slice(50);
       }
 
       await saveTodoList(todoList);
