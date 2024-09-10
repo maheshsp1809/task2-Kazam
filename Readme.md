@@ -79,22 +79,18 @@ MONGODB_URI=
 
 ![Image 1](public/frontend1.png)
 
-### Image 2
+### Websocket connection
 
-![Image 2](public/frontend2.png)
+![Image 2](public/websocket.png)
 
-### Image 3
+### Frontend
 
 ![Image 3](public/frontend3.png)
 
-### Image 4
+### Redis_Key and Value
 
 ![Image 4](public/redis_cache.png)
 
 ### Image 5
 
 ![Image 5](public/redis_mongodb_users.png)
-
-### Image 6
-
-![Image 6](public/websocket.png)
