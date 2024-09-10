@@ -9,7 +9,7 @@ This is a full-stack application implementing a to-do list using Node.js/Express
 
 ## Prerequisites
 
-- Node.js (v14+)
+- Node.js
 - npm (v6+)
 - Redis
 - MongoDB
